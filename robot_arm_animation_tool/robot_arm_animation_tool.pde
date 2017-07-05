@@ -1,5 +1,6 @@
 Curve curve;
 InteractionManager g;
+AnimationTool a;
 
 void setup()
 {
@@ -15,6 +16,10 @@ void setup()
   curve.addPoint(70,80);
   curve.addPoint(40,50);
   curve.addPoint(30,20);
+  
+  a = new AnimationTool(this, g);
+  a.setCurve(curve);
+  a.startAnimation();
 }
 
 void draw()

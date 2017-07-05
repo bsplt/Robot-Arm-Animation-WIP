@@ -193,6 +193,11 @@ public class Curve
   {
     bezierPoints.add(index, new BezierPoint(p, g, x, y));
   }
+
+  ArrayList<BezierPoint> getPoints()
+  {
+    return bezierPoints;
+  }
 }
 
 public class BezierPoint
