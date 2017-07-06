@@ -1,9 +1,16 @@
+import cc.arduino.*;
+import org.firmata.*;
+
 RobotArm robotArm;
+Arduino arduino;
 
 void setup()
 {
   size(700, 700);
   robotArm = new RobotArm(55, 240, 220);
+  
+  println(Arduino.list());
+  arduino = new Arduino(this, Arduino.list()[0], 57600);
 }
 
 void draw()
