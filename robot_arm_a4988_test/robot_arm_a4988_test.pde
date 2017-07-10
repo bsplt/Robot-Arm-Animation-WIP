@@ -31,19 +31,19 @@ void setup() {
 void draw() {
   if (frameCount % 720 > 240)
   {
-    arduino.digitalWrite(3, frameCount % 2 );
-    arduino.digitalWrite(5, frameCount % 2 );
+    arduino.digitalWrite(7, frameCount % 2 );
+    arduino.digitalWrite(9, frameCount % 2 );
   }
 
   if (frameCount % 480 == 0) 
   {
-    arduino.digitalWrite(2, forward ? 1 : 0);
+    arduino.digitalWrite(6, forward ? 1 : 0);
     forward = !forward;
   }
 
   if (frameCount % 240 == 0) 
   {
-    arduino.digitalWrite(4, forward ? 1 : 0);
+    arduino.digitalWrite(8, forward ? 1 : 0);
     forward = !forward;
   }
 }
