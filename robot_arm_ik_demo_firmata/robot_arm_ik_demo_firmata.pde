@@ -7,26 +7,28 @@ Arduino arduino;
 
 void setup()
 {
-  size(700, 700);
-  robotArm = new RobotArm(55, 240, 220);
-  frameRate(100000);
+  size(1080, 1080);
+  robotArm = new RobotArm(110, 480, 440);
+  frameRate(300);
 
   println(Arduino.list());
   arduino = new Arduino(this, Arduino.list()[0], 57600);
+  
+  strokeWeight(1.5);
 }
 
 void draw()
 {
   pushMatrix();
-  translate(width / 3, height / 1.5);
+  translate(width / 4, height / 1.3);
   background(240);
 
   if (mousePressed)
   {
-    robotArm.moveArmTowards(mouseX - width / 3, mouseY - height / 1.5);
+    robotArm.moveArmTowards(mouseX - width / 4, mouseY - height / 1.3);
     fill(#EA80FC);
     noStroke();
-    ellipse(mouseX - width / 3, mouseY - height / 1.5, 10, 10);
+    ellipse(mouseX - width / 4, mouseY - height / 1.3, 20, 20);
   }
 
   robotArm.update();
