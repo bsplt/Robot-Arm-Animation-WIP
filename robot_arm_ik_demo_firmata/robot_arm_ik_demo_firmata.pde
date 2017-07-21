@@ -9,7 +9,7 @@ void setup()
 {
   size(1080, 1080);
   robotArm = new RobotArm(110, 480, 440);
-  frameRate(300);
+  frameRate(2000);
 
   println(Arduino.list());
   arduino = new Arduino(this, Arduino.list()[0], 57600);
@@ -136,8 +136,8 @@ class RobotArm
 
   void initMotors()
   {
-    motorA = new Motor(TWO_PI / 200 / 16, true, 7, 6);
-    motorB = new Motor(TWO_PI / 200 / 16, false, 9, 8);
+    motorA = new Motor(TWO_PI / 200 / 16, true, 3, 6);
+    motorB = new Motor(TWO_PI / 200 / 16, false, 2, 5);
     motorA.setRotation(-PI * 0.75);
     motorB.setRotation(-HALF_PI / 2);
     motorA.setConstraints(-PI * 1.25, -HALF_PI);
